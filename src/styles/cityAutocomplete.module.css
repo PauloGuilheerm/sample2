@@ -1,53 +1,127 @@
-/* layout em 2 colunas */
 .layout {
   display: grid;
-  grid-template-columns: 1fr 360px; /* ajuste a largura do card */
+  grid-template-columns: 1fr 360px;
   gap: 16px;
   align-items: start;
 }
 
 @media (max-width: 900px) {
   .layout {
-    grid-template-columns: 1fr; /* empilha no mobile */
+    grid-template-columns: 1fr;
   }
 }
 
-.leftCol { min-width: 0; }   /* pra overflow horizontal não estourar */
-.rightCol { min-width: 0; }
+.leftCol {
+  min-width: 0;
+}
 
-/* reaproveite as classes que você já tinha pro input */
-.label { display:block; margin-bottom:.5rem; font-size:.875rem; font-weight:600; color:#9aa3b2; }
-.inputWrapper { position: relative; }
-.inputIcon { position:absolute; left:12px; top:50%; transform:translateY(-50%); opacity:.7; }
+.rightCol {
+  min-width: 0;
+}
+
+.label {
+  display: block;
+  margin-bottom: .5rem;
+  font-size: .875rem;
+  font-weight: 600;
+  color: #9aa3b2;
+}
+
+.inputWrapper {
+  position: relative;
+}
+
+.inputIcon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: .7;
+}
+
 .input {
-  width:100%; padding:.75rem 2.5rem .75rem 2.25rem;
-  border:1px solid #1f2937; border-radius:12px; background:#0b1220; color:#e5e7eb;
-  box-shadow:0 0 0 4px rgba(96,165,250,0) ; transition: box-shadow 120ms, border-color 120ms;
+  width: 100%;
+  padding: .75rem 2.5rem .75rem 2.25rem;
+  border: 1px solid #1f2937;
+  border-radius: 12px;
+  background: #0b1220;
+  color: #e5e7eb;
+  box-shadow: 0 0 0 4px rgba(96, 165, 250, 0);
+  transition: box-shadow 120ms, border-color 120ms;
 }
-.input:focus { border-color:#60a5fa; box-shadow:0 0 0 4px rgba(96,165,250,.18); }
-.clearBtn {
-  position:absolute; right:8px; top:50%; transform:translateY(-50%);
-  width:28px; height:28px; border:1px solid #1f2937; border-radius:999px; background:#0b1220; color:#9aa3af; cursor:pointer;
-}
-.clearBtn:hover { color:#e5e7eb; border-color:#60a5fa; }
 
-/* painel em fluxo (sem absolute!) */
+.input:focus {
+  border-color: #60a5fa;
+  box-shadow: 0 0 0 4px rgba(96, 165, 250, .18);
+}
+
+.clearBtn {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 28px;
+  height: 28px;
+  border: 1px solid #1f2937;
+  border-radius: 999px;
+  background: #0b1220;
+  color: #9aa3af;
+  cursor: pointer;
+}
+
+.clearBtn:hover {
+  color: #e5e7eb;
+  border-color: #60a5fa;
+}
+
 .panelInline {
   margin-top: 8px;
   border: 1px solid #1f2937;
   border-radius: 14px;
-  background: #0b1220; /* ajuste pra seu tema */
-  box-shadow: 0 10px 30px rgba(0,0,0,.35);
+  background: #0b1220;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .35);
   overflow: hidden;
 }
 
-.loading, .empty { padding:.875rem 1rem; color:#9aa3af; }
-
-.list { list-style:none; margin:0; padding:6px; max-height: 320px; overflow:auto; }
-.item {
-  width:100%; text-align:left; border:none; background:transparent; color:#e5e7eb;
-  padding:10px 12px; border-radius:10px; cursor:pointer; display:grid; grid-template-columns:1fr auto; gap:6px 16px;
+.loading,
+.empty {
+  padding: .875rem 1rem;
+  color: #9aa3af;
 }
-.item:hover { background:#111827; }
-.itemPrimary { font-weight:600; font-size:.98rem; }
-.itemSecondary { justify-self:end; font-size:.85rem; color:#9aa3af; }
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 6px;
+  max-height: 320px;
+  overflow: auto;
+}
+
+.item {
+  width: 100%;
+  text-align: left;
+  border: none;
+  background: transparent;
+  color: #e5e7eb;
+  padding: 10px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 6px 16px;
+}
+
+.item:hover {
+  background: #111827;
+}
+
+.itemPrimary {
+  font-weight: 600;
+  font-size: .98rem;
+}
+
+.itemSecondary {
+  justify-self: end;
+  font-size: .85rem;
+  color: #9aa3af;
+}

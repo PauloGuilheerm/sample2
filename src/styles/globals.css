@@ -1,3 +1,15 @@
+:root {
+  --bg: #fff;
+  --fg: #0f172a;      
+  --muted: #6b7280;    
+  --border: #e5e7eb; 
+  --ring: #2563eb;      
+  --ring-soft: rgba(37, 99, 235, 0.15);
+  --panel: #ffffff;
+  --item-hover: #f8fafc; 
+  --shadow: 0 10px 30px rgba(2, 6, 23, 0.12);
+}
+
 html,
 body {
   padding: 0;

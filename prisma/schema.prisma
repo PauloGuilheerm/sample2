@@ -1,20 +1,25 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
-    provider = "prisma-client-js"
+  provider = "prisma-client-js"
 }
 
 datasource db {
-    provider = "mysql"
-    url      = env("DATABASE_URL")
+  provider = "mysql"
+  url      = env("DATABASE_URL")
 }
 
-model Post {
-    id        Int      @id @default(autoincrement())
-    name      String
-    createdAt DateTime @default(now())
-    updatedAt DateTime @updatedAt
+model City {
+  id         Int     @id @default(autoincrement())
+  name       String
+  state      String?
+  country    String? @default("Brasil")
+  lat        Float?
+  lon        Float?
+  population Int?
+  timezone   String?
+  ibgeCode   String? @unique
 
-    @@index([name])
+  @@index([name])               
+  @@index([state])
+  @@unique([name, state, country])
 }
+
